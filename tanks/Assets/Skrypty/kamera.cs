@@ -11,8 +11,8 @@ public class kamera : MonoBehaviour
     public int dystans = 15;
     private float rotx = 0.0f;
     public bool kolizja;
-    private float late;
-    private float now;
+    public float late;
+    public float late2;
     private float offset;
 
     public float rotX
@@ -27,6 +27,7 @@ public class kamera : MonoBehaviour
 
     public void LateUpdate()
     {
+        late2 = myszGoraDol;
 
         myszGoraDol += Input.GetAxis("Mouse Y") * czuloscMyszki;
         
@@ -62,30 +63,20 @@ public class kamera : MonoBehaviour
             transform.rotation = target.rotation;
         }
 
-        if (!kolizja)
-        {
+       // if (late>0&&)
+        //{
             
             rotX = rotx;
           
-        }
+        //}
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        now = myszGoraDol;
-        kolizja = true;
+       
+        late = myszGoraDol-late2;
     }
 
-    private void OnTriggerStay(Collider other)
-    {
-        rotX = now - late;
-   
-    }
-   
-    private void OnTriggerExit(Collider other)
-    {        
-        kolizja = false;
-        late = myszGoraDol;
-    }
+    
 }
