@@ -24,6 +24,8 @@ public class gracz1 : MonoBehaviour
     public TextMeshProUGUI textmeshPro;
     public Slider s;
     private Vector3 lastPosition;
+   
+
 
 
 
@@ -54,6 +56,8 @@ public class gracz1 : MonoBehaviour
         // If there is no input (the tank is stationary)...
         if (Mathf.Abs(m_MovementInputValue) < 0.1f && Mathf.Abs(m_TurnInputValue) < 0.1f)
         {
+           
+
             // ... and if the audio source is currently playing the driving clip...
             if (m_MovementAudio.clip == m_EngineDriving)
             {
@@ -65,6 +69,9 @@ public class gracz1 : MonoBehaviour
         }
         else
         {
+         
+           
+
             // Otherwise if the tank is moving and if the idling clip is currently playing...
             if (m_MovementAudio.clip == m_EngineIdling)
             {
