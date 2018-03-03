@@ -5,9 +5,9 @@ using UnityEngine;
 public class wierza : MonoBehaviour {
 
     public Transform gracz;
+    public Transform target;
 
 
-    
     public float myszLewoPrawo = 0.0f;
     public float czuloscMyszki = 3.0f;
     public float x;
@@ -17,7 +17,7 @@ public class wierza : MonoBehaviour {
 
     void LateUpdate()
     {
-		myszLewoPrawo += Input.GetAxis("Mouse X") * czuloscMyszki;
+		myszLewoPrawo = target.eulerAngles.y;
         /*obrut = (myszLewoPrawo + 90f + gracz.eulerAngles.y) / 2;
         Vector3 a = Vector3.Lerp(new Vector3(myszLewoPrawo +90, 0, 0), new Vector3(gracz.eulerAngles.y, 0, 0), 0.1f);
         obrut = a.x;*/

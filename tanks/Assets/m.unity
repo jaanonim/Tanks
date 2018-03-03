@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 2
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 71f14a2d79f732f4d9893ef1b911f4ff, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 16723c95bfc340e4e9e270afc3290187, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.48397493, g: 0.575722, b: 0.6801979, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -466,7 +466,7 @@ Transform:
   m_Children:
   - {fileID: 531492498}
   m_Father: {fileID: 476224240}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &51190636
 MonoBehaviour:
@@ -834,12 +834,12 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 114377863}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.57, z: 0}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 2.802887, y: -0.13995361, z: 2.4609985}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 476224240}
-  m_RootOrder: 0
+  m_Father: {fileID: 1029159555}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &125220396
 GameObject:
@@ -2863,10 +2863,9 @@ Transform:
   m_LocalPosition: {x: 2.802887, y: -1.7099533, z: 2.4609833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 114377864}
   - {fileID: 51190635}
   m_Father: {fileID: 1029159555}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &476224241
 MonoBehaviour:
@@ -5583,6 +5582,7 @@ Transform:
   - {fileID: 1882992613}
   - {fileID: 1406709891}
   - {fileID: 1660646718}
+  - {fileID: 114377864}
   - {fileID: 476224240}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -7390,6 +7390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gracz: {fileID: 1660646718}
+  target: {fileID: 114377864}
   myszLewoPrawo: 0
   czuloscMyszki: 3
   x: 0
@@ -13737,7 +13738,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 114377864}
+  tank: {fileID: 1660646718}
   myszGoraDol: 0
+  myszLewoPrawo: 0
   czuloscMyszki: 3
   dystans: 15
   kolizja: 0
