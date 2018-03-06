@@ -6,11 +6,13 @@ using UnityEngine.UI;
 public class test2 : MonoBehaviour {
 
 	public Transform target;
+    public Transform dol;
     public int zycieEnemi = 50;
     public Slider s;
 
     void Update () {
 
+        transform.position = dol.position + new Vector3(0, 2, 0);
         s.value = zycieEnemi;
         transform.LookAt(target);
         if(zycieEnemi<=0)

@@ -46,17 +46,17 @@ public class kamera : MonoBehaviour
         //target.rotation = tank.rotation;
         myszGoraDol += Input.GetAxis("Mouse Y") * czuloscMyszki;
         myszLewoPrawo += Input.GetAxis("Mouse X") * czuloscMyszki;
-        roty = -myszLewoPrawo;
+        roty = myszLewoPrawo;
         rotx = -myszGoraDol;
 
-        if (Input.mouseScrollDelta.y > 0)
+        if (Input.mouseScrollDelta.y < 0)
         {
             if (dystans < 30)
             {
                 dystans += 5;
             }
         }
-        else if (Input.mouseScrollDelta.y < 0)
+        else if (Input.mouseScrollDelta.y > 0)
         {
             if (dystans > 0)
             {

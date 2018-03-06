@@ -26,7 +26,7 @@ public class strzelanie : MonoBehaviour {
 
     void Update()
     {
-        test();
+        //test();
 
         timer += Time.deltaTime;
         float a = 4-timer;
