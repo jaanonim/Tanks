@@ -12,8 +12,15 @@ public class AI : MonoBehaviour {
     // Use this for initialization
     void Update () {
         //target = transform.position + Vector3.forward * 100;
-        target=t.position;
-        agent.SetDestination(target);
-	}
-	
+         
+
+        if (Vector3.Distance(target, t.position) > 3.0f)
+        {
+            target = t.position;
+            agent.SetDestination(target);
+        }
+
+    }
+
+
 }

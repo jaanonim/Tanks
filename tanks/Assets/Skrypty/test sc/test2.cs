@@ -12,10 +12,14 @@ public class test2 : MonoBehaviour {
 
     void Update () {
 
-        transform.position = dol.position + new Vector3(0, 2, 0);
+        transform.position = dol.position + new Vector3(0, 1f, 0);
         s.value = zycieEnemi;
         transform.LookAt(target);
-        if(zycieEnemi<=0)
+        float x=dol.eulerAngles.x;
+        float z = dol.eulerAngles.z;
+        float y = transform.eulerAngles.y;
+        transform.rotation = Quaternion.Euler(x, y, z);
+        if (zycieEnemi<=0)
         {
             Destroy(gameObject);
         }

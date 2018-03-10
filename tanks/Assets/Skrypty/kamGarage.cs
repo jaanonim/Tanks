@@ -26,21 +26,23 @@ public class kamGarage : MonoBehaviour {
     {
 
         myszLewoPrawo += Input.GetAxis("Mouse X") * czuloscMyszki;
-
+        roty = myszLewoPrawo;
+        rotY = roty;
+        /*
         if (Input.GetButton("Fire1"))
         {
-             
+
             roty = myszLewoPrawo + late;
 
 
             rotY = roty;
-           
+
 
         }
         if (Input.GetButtonUp("Fire1"))
         {
             late = myszLewoPrawo;
-        }
+        }*/
     }
 
 }
