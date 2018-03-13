@@ -1,3 +1,4 @@
-wierza -> rotacja wzglendem tank
+lufa -> drgania
+¿ycie -> img to slider
 kamera dokoñcz
 enemi SI

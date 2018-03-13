@@ -7,7 +7,7 @@ public class zycie : MonoBehaviour {
 
     public float currentHealth = 100.0f;
     private float maxHealth = 100.0f;
-
+    public GameObject licznik;
     public Texture2D healthTexture;
 
     private void Start()
@@ -30,6 +30,11 @@ public class zycie : MonoBehaviour {
             if(currentHealth<0)
             {
                 currentHealth = 0;
+                
+            }
+            if(currentHealth==0)
+            {
+                licznik.SendMessage("Defend");
             }
 
         }

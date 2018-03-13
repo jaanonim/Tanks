@@ -7,6 +7,7 @@ public class test2 : MonoBehaviour {
 
 	public Transform target;
     public GameObject G;
+    public GameObject licznik;
     public Transform dol;
     public int zycieEnemi = 50;
     public Slider s;
@@ -22,6 +23,7 @@ public class test2 : MonoBehaviour {
         transform.rotation = Quaternion.Euler(x, y, z);
         if (zycieEnemi<=0)
         {
+            licznik.SendMessage("Enemi");
             Destroy(G);
         }
 	}
