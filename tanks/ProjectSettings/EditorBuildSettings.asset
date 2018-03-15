@@ -14,3 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/m.unity
     guid: a28b768ca0c9db546b73b9e36ea4f97d
+  - enabled: 1
+    path: Assets/campania.unity
+    guid: d8c05baadba1dcb4fadff338ab947420
+  m_configObjects: {}

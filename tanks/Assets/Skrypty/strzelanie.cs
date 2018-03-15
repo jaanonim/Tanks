@@ -18,6 +18,7 @@ public class strzelanie : MonoBehaviour {
     public Image Img;
     public float TimeReload=3.0f;
     public Rigidbody test1;
+    //public GameObject pause;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class strzelanie : MonoBehaviour {
         Img.color = c;
         text2.color = c;
 
-        if (Input.GetButtonDown("Fire1") && fire)
+        if (Input.GetButtonDown("Fire1") && fire && !pause.IsPause)
         {
             audio.Play();
             GameObject go;

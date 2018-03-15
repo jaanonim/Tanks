@@ -17,6 +17,7 @@ public class kamera : MonoBehaviour
     public float late;
     public float late2;
     private float offset;
+    public float speadRot = 100;
 
     public float rotX
     {
@@ -44,8 +45,8 @@ public class kamera : MonoBehaviour
 
         target.position = tank.position + new Vector3(0, 1.57f, 0);
         //target.rotation = tank.rotation;
-        myszGoraDol += Input.GetAxis("Mouse Y") * czuloscMyszki;
-        myszLewoPrawo += Input.GetAxis("Mouse X") * czuloscMyszki;
+        myszGoraDol += Input.GetAxis("Mouse Y") * czuloscMyszki *Time.deltaTime *speadRot;
+        myszLewoPrawo += Input.GetAxis("Mouse X") * czuloscMyszki * Time.deltaTime * speadRot;
         roty = myszLewoPrawo;
         rotx = -myszGoraDol;
 

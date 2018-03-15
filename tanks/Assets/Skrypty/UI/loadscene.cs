@@ -12,6 +12,7 @@ public class loadscene : MonoBehaviour {
 	
 	public void loadlewel (string name)
     {
+        Time.timeScale = 1f;
         StartCoroutine(LoadAsynchronusly(name));
 	}
 
