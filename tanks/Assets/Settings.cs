@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class Settings : MonoBehaviour {
 
     public AudioMixer mixer;
+
 
     public Dropdown rd;
 
@@ -37,6 +40,12 @@ public class Settings : MonoBehaviour {
         rd.RefreshShownValue();
     }
 
+    public void screan(int index)
+    {
+        Resolution ra = r[index];
+        Screen.SetResolution(ra.width,ra.height, Screen.fullScreen);
+    }
+
     public void Volume (float v)
     {
         mixer.SetFloat("v",v);
@@ -50,5 +59,10 @@ public class Settings : MonoBehaviour {
     public void full(bool f)
     {
         Screen.fullScreen = f;
+    }
+
+    public void x()
+    {
+        gameObject.SetActive(false);
     }
 }

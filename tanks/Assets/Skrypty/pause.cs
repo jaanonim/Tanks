@@ -9,6 +9,7 @@ public class pause : MonoBehaviour {
 
     public GameObject menu;
     public GameObject load;
+    public GameObject settings;
 
     void Update()
     {
@@ -31,6 +32,7 @@ public class pause : MonoBehaviour {
     {
         IsPause = false;
         menu.SetActive(false);
+        settings.SetActive(false);
         Time.timeScale = 1;
     }
     public void Pause()
@@ -49,8 +51,7 @@ public class pause : MonoBehaviour {
     }
     public void Settings()
     {
-        Debug.Log("Settings...");
-        //load.SendMessage("loadlewel", "garage");
+        settings.SetActive(true);
     }
 
 }
