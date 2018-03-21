@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15929638, g: 0.23795256, b: 0.30623946, a: 1}
+  m_IndirectSpecularColor: {r: 0.15989873, g: 0.23883691, b: 0.3072934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -100,8 +100,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.6
+    agentSlope: 40
+    agentClimb: 0.3
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -1359,6 +1359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 124828806}
   t: {fileID: 1660646718}
+  a: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
 --- !u!195 &124828806
 NavMeshAgent:
@@ -9558,8 +9559,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.39215687, b: 0.99215686, a: 1}
+    m_PressedColor: {r: 0, g: 0.20784314, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -11519,8 +11520,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.39071432, b: 0.990566, a: 1}
+    m_PressedColor: {r: 0, g: 0.20677495, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -13143,6 +13144,7 @@ Transform:
   m_LocalPosition: {x: 284.7, y: 63.3, z: 135.6}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
+  - {fileID: 1892131474}
   - {fileID: 1899301794}
   - {fileID: 1411716084}
   m_Father: {fileID: 0}
@@ -15040,7 +15042,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -21559,6 +21561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1149389908}
   t: {fileID: 1660646718}
+  a: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
 --- !u!195 &1149389908
 NavMeshAgent:
@@ -24368,6 +24371,8 @@ GameObject:
   - component: {fileID: 1411716085}
   - component: {fileID: 1411716088}
   - component: {fileID: 1411716086}
+  - component: {fileID: 1411716090}
+  - component: {fileID: 1411716089}
   m_Layer: 0
   m_Name: enemi
   m_TagString: Untagged
@@ -24382,14 +24387,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1411716083}
   m_LocalRotation: {x: -0, y: 0.7245261, z: -0, w: 0.68924737}
-  m_LocalPosition: {x: -4.41, y: 0, z: 0}
+  m_LocalPosition: {x: -4.41, y: 0.05, z: 0}
   m_LocalScale: {x: 1, y: 0.5, z: 1.5}
   m_Children:
   - {fileID: 1082305169}
   - {fileID: 1812191895}
   - {fileID: 97135617}
   m_Father: {fileID: 790585297}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 92.859, z: 0}
 --- !u!23 &1411716085
 MeshRenderer:
@@ -24462,6 +24467,55 @@ MonoBehaviour:
   dol: {fileID: 1899301794}
   zycieEnemi: 50
   s: {fileID: 1671772298}
+--- !u!59 &1411716089
+HingeJoint:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411716083}
+  m_ConnectedBody: {fileID: 1899301789}
+  m_Anchor: {x: 0, y: -0.5, z: 0}
+  m_Axis: {x: 0, y: 1, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: -0.000000004257472, y: 0.48333234, z: 0.017141743}
+  m_UseSpring: 0
+  m_Spring:
+    spring: 0
+    damper: 0
+    targetPosition: 0
+  m_UseMotor: 1
+  m_Motor:
+    targetVelocity: 0
+    force: 0
+    freeSpin: 0
+  m_UseLimits: 0
+  m_Limits:
+    min: 0
+    max: 0
+    bounciness: 0
+    bounceMinVelocity: 0.2
+    contactDistance: 0
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
+--- !u!54 &1411716090
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1411716083}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1417290135
 GameObject:
   m_ObjectHideFlags: 0
@@ -24492,8 +24546,8 @@ RectTransform:
   m_Father: {fileID: 454985094}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.6666667, y: 0}
+  m_AnchorMax: {x: 0.6666667, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -25975,7 +26029,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 955310650}
   m_HandleRect: {fileID: 1417290136}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -40
   m_MaxValue: 20
   m_WholeNumbers: 0
   m_Value: 0
@@ -28214,6 +28268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 1717167928}
   t: {fileID: 1660646718}
+  a: {fileID: 0}
   target: {x: 0, y: 0, z: 0}
 --- !u!195 &1717167928
 NavMeshAgent:
@@ -28931,7 +28986,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 1849089980}
   load: {fileID: 1591568404}
-  settings: {fileID: 0}
+  settings: {fileID: 240288880}
 --- !u!1 &1788770216
 GameObject:
   m_ObjectHideFlags: 0
@@ -34681,6 +34736,56 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1890855679}
   m_Mesh: {fileID: 4300044, guid: a515ab33573d2144b9d1be5bb39ab89a, type: 3}
+--- !u!1 &1892131470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1892131474}
+  - component: {fileID: 1892131471}
+  m_Layer: 0
+  m_Name: kierownica
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!195 &1892131471
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892131470}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.5
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!4 &1892131474
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1892131470}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -4.470001, y: -0.5625, z: 0}
+  m_LocalScale: {x: 1.750001, y: 0.75, z: 3.500007}
+  m_Children: []
+  m_Father: {fileID: 790585297}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1899301787
 GameObject:
   m_ObjectHideFlags: 0
@@ -34691,7 +34796,6 @@ GameObject:
   - component: {fileID: 1899301794}
   - component: {fileID: 1899301793}
   - component: {fileID: 1899301792}
-  - component: {fileID: 1899301791}
   - component: {fileID: 1899301790}
   - component: {fileID: 1899301789}
   - component: {fileID: 1899301788}
@@ -34742,30 +34846,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d05891685e911c0429fb719be3e744cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  agent: {fileID: 1899301791}
+  agent: {fileID: 1892131471}
   t: {fileID: 1660646718}
+  a: {fileID: 1892131474}
   target: {x: 0, y: 0, z: 0}
---- !u!195 &1899301791
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1899301787}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.3
-  m_Speed: 5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 2
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.5
-  m_BaseOffset: 0.5
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!23 &1899301792
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -34819,7 +34903,7 @@ Transform:
   m_LocalScale: {x: 1.750001, y: 0.75, z: 3.500002}
   m_Children: []
   m_Father: {fileID: 790585297}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1899301795
 BoxCollider:
@@ -36732,8 +36816,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0, g: 0.40936995, b: 1, a: 1}
+    m_PressedColor: {r: 0, g: 0.19978666, b: 1, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

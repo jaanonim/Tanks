@@ -7,7 +7,19 @@ public class AI : MonoBehaviour {
 
     public NavMeshAgent agent;
     public Transform t;
+    public Transform a;
+
     public Vector3 target;
+
+    public float rotY
+    {
+        get { return transform.rotation.eulerAngles.y; }
+        set
+        {
+            Vector3 v = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(v.x, value, v.z);
+        }
+    }
 
     // Use this for initialization
     void Update () {
@@ -19,6 +31,10 @@ public class AI : MonoBehaviour {
             target = t.position;
             agent.SetDestination(target);
         }
+
+        rotY= a.eulerAngles.y;
+
+        transform.position=a.position;
 
     }
 
