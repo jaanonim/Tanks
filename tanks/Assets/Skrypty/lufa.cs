@@ -10,7 +10,7 @@ public class lufa : MonoBehaviour {
         
 	
 	// Update is called once per frame
-	void LateUpdate () {
+	void FixedUpdate () {
 		transform.position = target.position;
 		transform.rotation = target.rotation;
     }

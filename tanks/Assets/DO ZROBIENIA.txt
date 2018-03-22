@@ -1,4 +1,3 @@
 lufa -> drgania
-¿ycie -> img to slider
 kamera dokoñcz
-enemi SI
+enemi SI ->rotacje
