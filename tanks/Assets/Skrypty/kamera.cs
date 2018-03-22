@@ -10,7 +10,7 @@ public class kamera : MonoBehaviour
     public float myszGoraDol = 0.0f;
     public float myszLewoPrawo = 0.0f;
     public float czuloscMyszki = 3.0f;
-    public int dystans = 15;
+    public float dystans = 15;
     private float rotx = 0.0f;
     private float roty = 0.0f;
     public bool kolizja;
@@ -18,6 +18,7 @@ public class kamera : MonoBehaviour
     public float late2;
     private float offset;
     public float speadRot = 100;
+    public float s = 0.5f;
 
     public float rotX
     {
@@ -38,11 +39,22 @@ public class kamera : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        late2 += Time.deltaTime;
+
+        if (kolizja)
+        {
+            if (!(late - target.rotation.eulerAngles.x >= 0))
+            {
+                kolizja = false;
+            }
+        }
+    }
 
     public void LateUpdate()
     {
-        late2 = myszGoraDol;
-
+     
         target.position = tank.position + new Vector3(0, 1.57f, 0);
         //target.rotation = tank.rotation;
         myszGoraDol += Input.GetAxis("Mouse Y") * czuloscMyszki *Time.deltaTime *speadRot;
@@ -67,7 +79,7 @@ public class kamera : MonoBehaviour
 
 
 
-        Vector3 d = target.position + (target.rotation * new Vector3(0, 0, -dystans));
+        Vector3 d = target.position + (target.rotation * new Vector3(0, 0, - dystans));
         Vector3 end = d;
         transform.position = end;
         //transform.rotation = target.rotation;
@@ -79,20 +91,31 @@ public class kamera : MonoBehaviour
             transform.rotation = target.rotation;
         }
 
-       // if (late>0&&)
-        //{
-            rotY = roty;
+        if(kolizja)
+        {
             rotX = rotx;
-            
-        //}
+        }
+        else
+        {
+            rotX = rotx;
+        }
+        rotY = roty;
+
+        late = target.rotation.eulerAngles.x;
+
+
 
     }
-
     private void OnTriggerEnter(Collider other)
     {
-       
-        late = myszGoraDol-late2;
+        kolizja = true;
     }
 
+
     
+    private void OnTriggerExit(Collider other)
+    {
+        kolizja = false;
+    }
+
 }
