@@ -14,6 +14,7 @@ public class zycie : MonoBehaviour {
     private void Start()
     {
         currentHealth = maxHealth;
+        s = GameObject.Find("live").GetComponent<Slider>() as Slider;
     }
 
     private void OnTriggerEnter(Collider collision)

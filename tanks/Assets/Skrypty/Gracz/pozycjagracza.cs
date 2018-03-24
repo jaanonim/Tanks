@@ -16,9 +16,21 @@ public class pozycjagracza : MonoBehaviour {
     private float plansza_x = 200.0f;
     private float plansza_y = 200.0f;
 
+    void Start()
+    {
+        StartCoroutine(LateStart(1));
+    }
 
-	// Update is called once per frame
-	void Update ()
+    IEnumerator LateStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+    
+        t=GameObject.Find("tank").transform;
+    }
+
+
+    // Update is called once per frame
+    void Update ()
     {
         pozycja = t.position;
         x = (pozycja.x * plansza_x) / teren_x;

@@ -11,6 +11,11 @@ public class AI : MonoBehaviour {
 
     public Vector3 target;
 
+    private void Start()
+    {
+        t = GameObject.Find("tank").transform;
+    }
+
     public float rotY
     {
         get { return transform.rotation.eulerAngles.y; }

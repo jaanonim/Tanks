@@ -34,8 +34,8 @@ public class gracz1 : MonoBehaviour
     {
         m_MovementInputValue = 0f;
         m_TurnInputValue = 0f;
-        
-        
+        s = GameObject.Find("SpeadSlider").GetComponent<Slider>() as Slider;
+        textmeshPro = GameObject.Find("Spead").GetComponent<TextMeshProUGUI>() as TextMeshProUGUI;
     }
 
     private void Update()

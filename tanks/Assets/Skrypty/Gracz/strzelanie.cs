@@ -19,10 +19,13 @@ public class strzelanie : MonoBehaviour {
     public float TimeReload=3.0f;
     public Rigidbody test1;
     //public GameObject pause;
-
+    
     void Start()
     {
+        text2 = GameObject.Find("time").GetComponent<Text>() as Text;
         text2.enabled = true;
+        slider1 = GameObject.Find("reload").GetComponent<Slider>() as Slider;
+        Img = GameObject.Find("FillR").GetComponent<Image>() as Image;
     }
 
     void Update()

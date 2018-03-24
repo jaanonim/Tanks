@@ -13,17 +13,16 @@ public class test2 : MonoBehaviour {
     public Slider s;
 
 
-
     void Update () {
 
         
-        transform.position = dol.position + new Vector3(0, 1f, 0);
+        //transform.position = dol.position + new Vector3(0, 1f, 0);
         s.value = zycieEnemi;
-        transform.LookAt(target);
-        float x = dol.eulerAngles.x;
-        float z = dol.eulerAngles.z;
-        float y = transform.eulerAngles.y;
 
+
+        float y = target.eulerAngles.x;
+        float x = transform.eulerAngles.x;
+        float z = transform.eulerAngles.z;
         transform.rotation = Quaternion.Euler(x, y, z);
 
         if (zycieEnemi<=0)
