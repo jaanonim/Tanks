@@ -9,6 +9,7 @@ public class AI : MonoBehaviour {
     public Transform t;
     public Transform a;
 
+
     public Vector3 target;
 
     private void Start()
@@ -23,6 +24,7 @@ public class AI : MonoBehaviour {
         {
             Vector3 v = transform.rotation.eulerAngles;
             transform.rotation = Quaternion.Euler(v.x, value, v.z);
+            
         }
     }
 
@@ -37,7 +39,7 @@ public class AI : MonoBehaviour {
             agent.SetDestination(target);
         }
 
-        rotY= a.eulerAngles.y;
+        rotY=a.eulerAngles.y;
 
         transform.position=a.position;
 

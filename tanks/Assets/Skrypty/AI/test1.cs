@@ -9,7 +9,10 @@ public class test1 : MonoBehaviour {
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
-        gora.SendMessage("Hit",other);
+        if (other.tag == "pocisk")
+        {
+            gora.SendMessage("Hit", other);
+        }
     }
 
 }

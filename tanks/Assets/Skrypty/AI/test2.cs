@@ -16,11 +16,11 @@ public class test2 : MonoBehaviour {
     void Update () {
 
         
-        //transform.position = dol.position + new Vector3(0, 1f, 0);
+        transform.position = dol.position + new Vector3(0, 1f, 0);
         s.value = zycieEnemi;
 
 
-        float y = target.eulerAngles.x;
+        float y = target.eulerAngles.y;
         float x = transform.eulerAngles.x;
         float z = transform.eulerAngles.z;
         transform.rotation = Quaternion.Euler(x, y, z);

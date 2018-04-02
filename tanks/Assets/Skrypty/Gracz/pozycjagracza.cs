@@ -24,8 +24,8 @@ public class pozycjagracza : MonoBehaviour {
     IEnumerator LateStart(float waitTime)
     {
         yield return new WaitForSeconds(waitTime);
-    
-        t=GameObject.Find("tank").transform;
+
+        t = GameObject.Find("tank").transform;
     }
 
 
