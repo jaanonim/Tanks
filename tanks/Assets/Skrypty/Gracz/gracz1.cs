@@ -6,8 +6,10 @@ using TMPro;
 
 public class gracz1 : MonoBehaviour
 {
-    public float m_Speed = 12f;                 // How fast the tank moves forward and back.
-    public float m_TurnSpeed = 180f;            // How fast the tank turns in degrees per second.
+    public zmienne dane;
+
+    public float m_Speed ;                 // How fast the tank moves forward and back.
+    public float m_TurnSpeed ;            // How fast the tank turns in degrees per second.
     public AudioSource m_MovementAudio;         // Reference to the audio source used to play engine sounds. NB: different to the shooting audio source.
     public AudioClip m_EngineIdling;            // Audio to play when the tank isn't moving.
     public AudioClip m_EngineDriving;           // Audio to play when the tank is moving.
@@ -32,6 +34,8 @@ public class gracz1 : MonoBehaviour
 
     private void Start()
     {
+        m_Speed = dane.spead;
+        m_TurnSpeed = dane.r_spead;
         m_MovementInputValue = 0f;
         m_TurnInputValue = 0f;
         s = GameObject.Find("SpeadSlider").GetComponent<Slider>() as Slider;

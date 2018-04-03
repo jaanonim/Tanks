@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class zycie : MonoBehaviour {
 
-
-    public float currentHealth = 100.0f;
-    private float maxHealth = 100.0f;
+    public zmienne dane;
+    private float maxHealth;
+    public float currentHealth;
+    
     public GameObject licznik;
     public Slider s;
 
     private void Start()
     {
+        maxHealth = dane.myHealth;
         currentHealth = maxHealth;
         s = GameObject.Find("live").GetComponent<Slider>() as Slider;
     }

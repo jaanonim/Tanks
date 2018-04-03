@@ -19,6 +19,7 @@ public class forecast : MonoBehaviour {
     {
         RaycastHit hit1;
         Vector3 newDir = Vector3.up;
+        float distans;
 
         Vector3[] results = new Vector3[steps];
 
@@ -36,12 +37,13 @@ public class forecast : MonoBehaviour {
 
             if (i > 0)
             {
+                distans = Vector3.Distance(results[i - 1], results[i]);
                 Vector3 targetDir = results[i - 1] - results[i];
                 float step = 1000f * Time.deltaTime;
                 newDir = Vector3.RotateTowards(Vector3.forward, targetDir, step, 0.0f);
                
 
-                if (Physics.Raycast(pos, newDir, out hit1, Vector3.Distance(results[i - 1], results[i])))
+                if (Physics.Raycast(pos, newDir, out hit1, distans))
                 {
                    
                     return results[i];

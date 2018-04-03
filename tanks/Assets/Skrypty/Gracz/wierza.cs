@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class wierza : MonoBehaviour {
 
+    public zmienne dane;
     public Transform gracz;
     public Transform target;
 
 
     public float myszLewoPrawo = 0.0f;
-    public float czuloscMyszki = 3.0f;
+    public float czuloscMyszki;
     public float x;
     public float z;
     public Rigidbody m_Rigidbody;
     private float obrut;
+
+    private void Start()
+    {
+        czuloscMyszki = dane.czuloscMyszy;
+    }
 
     void LateUpdate()
     {

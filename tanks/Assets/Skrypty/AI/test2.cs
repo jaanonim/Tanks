@@ -12,18 +12,26 @@ public class test2 : MonoBehaviour {
     public int zycieEnemi = 50;
     public Slider s;
 
+    public float rotY
+    {
+        get { return transform.rotation.eulerAngles.y; }
+        set
+        {
+            Vector3 v = transform.rotation.eulerAngles;
+            transform.rotation = Quaternion.Euler(v.x, value, v.z);
+
+        }
+    }
+
 
     void Update () {
 
-        
+        transform.rotation = dol.rotation;
+
+        rotY = target.eulerAngles.y;
+
         transform.position = dol.position + new Vector3(0, 1f, 0);
         s.value = zycieEnemi;
-
-
-        float y = target.eulerAngles.y;
-        float x = transform.eulerAngles.x;
-        float z = transform.eulerAngles.z;
-        transform.rotation = Quaternion.Euler(x, y, z);
 
         if (zycieEnemi<=0)
         {
