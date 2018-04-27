@@ -15,7 +15,7 @@ public class test3 : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
 
-        target = GameObject.Find("tank").transform;
+        target = GameObject.Find("Main Camera").transform;
     }
 
     // Update is called once per frame
