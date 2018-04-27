@@ -15,7 +15,7 @@ public class test : MonoBehaviour {
         if (timer > 4)
         {
             Rigidbody clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
-            Vector3 fwd = transform.TransformDirection(Vector3.down);
+            Vector3 fwd = transform.TransformDirection(Vector3.up);
             clone.AddForce(fwd * 1500f);
             timer = 0;
         } 
