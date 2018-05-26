@@ -6,13 +6,21 @@ public class test4 : MonoBehaviour {
 
     public Transform target;
 
-    // Use this for initialization
-    void Start () {
+    void Start()
+    {
+        StartCoroutine(LateStart(1));
+    }
+
+    IEnumerator LateStart(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+
         target = GameObject.Find("tank").transform;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         transform.LookAt(target);
     }
 }

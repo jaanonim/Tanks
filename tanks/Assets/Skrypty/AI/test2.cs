@@ -24,7 +24,7 @@ public class test2 : MonoBehaviour {
     }
 
 
-    void Update () {
+    void LateUpdate () {
 
         transform.rotation = dol.rotation;
 
