@@ -7,13 +7,15 @@ public class forecast : MonoBehaviour {
     
     public Rigidbody r;
     public Vector3 v;
-    public GameObject o;
     public int liczba;
     public Vector3 a;
 
     public GameObject obj;
 
-
+    private void Start()
+    {
+        obj = GameObject.Find("Celownik3D");
+    }
 
     public static Vector3 Plot(Rigidbody rigidbody, Vector3 pos, Vector3 velocity, int steps)
     {
