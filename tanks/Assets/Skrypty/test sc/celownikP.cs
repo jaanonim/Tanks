@@ -12,14 +12,15 @@ public class celownikP : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //transform.LookAt(cam);
-        pos=Move(pos);
+        Move();
     }
 
-    public Vector3 Move(Vector3 post)
+    public void Move()
     {
-        pos = Vector3.Lerp(transform.position, pos, spead);
+        //pos = Vector3.Lerp(transform.position, pos, spead);
+        pos = cam.transform.position;
         Vector3 end = kamera.WorldToScreenPoint(pos);
         transform.position = end;
-        return pos;
+        
     }
 }

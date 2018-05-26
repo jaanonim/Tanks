@@ -11,7 +11,7 @@ public class forecast : MonoBehaviour {
     public int liczba;
     public Vector3 a;
 
-    
+    public GameObject obj;
 
 
 
@@ -59,17 +59,17 @@ public class forecast : MonoBehaviour {
     void test () {
 
         a = Plot(r, transform.position, v, liczba);
-       /* for (int i = 0; i < liczba; i++)
-        {
-            Destroy(Instantiate(o, a[i], transform.rotation), 1);
-        }  */
-        Destroy(Instantiate(o, a, transform.rotation), 1);
-
+        /* for (int i = 0; i < liczba; i++)
+         {
+             Destroy(Instantiate(o, a[i], transform.rotation), 1);
+         }  */
+        Transform t = obj.GetComponent<Transform>() as Transform;
+        t.position = a;
 
     }
-	
-	
-	void Update () {
+    
+
+    void Update () {
 
         v=transform.rotation * Vector3.up * 5000;
         test();
