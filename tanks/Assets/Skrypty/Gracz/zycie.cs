@@ -17,6 +17,7 @@ public class zycie : MonoBehaviour {
         maxHealth = dane.myHealth;
         currentHealth = maxHealth;
         s = GameObject.Find("live").GetComponent<Slider>() as Slider;
+        licznik = GameObject.Find("licznik");
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -7,8 +7,6 @@ public class test : MonoBehaviour {
     public Rigidbody bullet;
     float timer;
 
-
-
     void Update()
     {
         timer += Time.deltaTime;
@@ -16,13 +14,12 @@ public class test : MonoBehaviour {
 
         if (timer > 4)
         {
-            if(Physics.Raycast(transform.position, Vector3.up, out hit1, 20))
-            {
-                Debug.Log(hit1.collider.gameObject.tag);
-                if(hit1.collider.gameObject.tag=="Player")
+            if (Physics.Raycast(transform.position - new Vector3(0, .2f,0), transform.TransformDirection(Vector3.forward), out hit1, 20))
+            {            
+                if (hit1.collider.gameObject.tag=="Player")
                 {
                     Rigidbody clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
-                    Vector3 fwd = transform.TransformDirection(Vector3.down);
+                    Vector3 fwd = transform.TransformDirection(Vector3.forward);
                     clone.AddForce(fwd * 1500f);
                     timer = 0;
                 }

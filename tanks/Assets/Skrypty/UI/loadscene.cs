@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-//using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,11 +17,10 @@ public class loadscene : MonoBehaviour {
 	}
 
      IEnumerator LoadAsynchronusly (string name)
-    {
+     {
         AsyncOperation op = SceneManager.LoadSceneAsync(name);
 
         screan.SetActive(true);
-
 
         while(!op.isDone)
         {
@@ -33,5 +32,5 @@ public class loadscene : MonoBehaviour {
             yield return null;
 
         }
-    }
+     }
 }
