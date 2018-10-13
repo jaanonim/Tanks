@@ -410,6 +410,9 @@ PlayerSettings:
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
   switchSupportedNpadStyles: 3
+  switchNativeFsCacheSize: 32
+  switchIsHoldTypeHorizontal: 0
+  switchSupportedNpadCount: 8
   switchSocketConfigEnabled: 0
   switchTcpInitialSendBufferSize: 32
   switchTcpInitialReceiveBufferSize: 64
@@ -552,13 +555,21 @@ PlayerSettings:
   webGLCompressionFormat: 1
   webGLLinkerTarget: 0
   scriptingDefineSymbols:
-    1: CROSS_PLATFORM_INPUT
-    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT
-    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT
+    1: CROSS_PLATFORM_INPUT;UNITY_POST_PROCESSING_STACK_V1
+    4: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V1
+    7: CROSS_PLATFORM_INPUT;MOBILE_INPUT;UNITY_POST_PROCESSING_STACK_V1
+    13: UNITY_POST_PROCESSING_STACK_V1
     14: MOBILE_INPUT
     17: MOBILE_INPUT
+    18: UNITY_POST_PROCESSING_STACK_V1
+    19: UNITY_POST_PROCESSING_STACK_V1
     20: MOBILE_INPUT
+    21: UNITY_POST_PROCESSING_STACK_V1
     22: MOBILE_INPUT
+    23: UNITY_POST_PROCESSING_STACK_V1
+    25: UNITY_POST_PROCESSING_STACK_V1
+    26: UNITY_POST_PROCESSING_STACK_V1
+    27: UNITY_POST_PROCESSING_STACK_V1
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
